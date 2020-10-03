@@ -3,17 +3,17 @@
 #include <opencv2\imgproc\imgproc.hpp>
 using namespace std;
 using namespace cv;
-CascadeClassifier car_cascade("C:/Users/GrimReaper/Desktop/cars.xml");
+CascadeClassifier car_cascade("C:/Users/GrimReaper/Desktop/cars.xml");			//location for classifier
 // loading trained data set
 int main() {
-	VideoCapture cap("e:/highway.mp4");
+	VideoCapture cap("e:/highway.mp4");			//open the file 
 	if (!cap.isOpened())  // check if we succeeded
 	{	
 		cout << "File Coudn't Be Loaded!\nProgram Will Exit Now." << endl;
 		return -1;
 	}
 	while (1) {
-		Mat frame,copy_frame;
+		Mat frame,copy_frame;			//fetch every frrame from video
 		for (int i = 0;i < 5;i++)
 			cap >> frame;			//only process every fifth frame
 		copy_frame = frame.clone();
